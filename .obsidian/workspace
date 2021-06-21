@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Vault/Troubleshooting - Kubernetes.md",
+            "file": "Vault/Performance.md",
             "mode": "source"
           }
         }
@@ -52,7 +52,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 228
   },
   "right": {
     "id": "6adcd5b11bf5f53a",
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Vault/Troubleshooting - Kubernetes.md",
+                "file": "Vault/Performance.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "d8d7ae94f5450a8c",
   "lastOpenFiles": [
-    "Vault/Troubleshooting - Kubernetes.md",
-    "Vault/Resourse Quotas.md",
-    "ToDo.md",
-    "Vault/Name spaces.md",
-    "Vault/Troubleshooting.md",
+    "Vault/Performance.md",
+    "Untitled.md",
+    "Vault/Troubleshooting/Kubernetes.md",
+    "Vault/Troubleshooting/General.md",
+    "Vault/Storage/Raft.md",
+    "Kubernetes/Helm.md",
+    "FCPA.md",
     "Vault/Terraform.md",
-    "Terraform.md",
-    "Markdown.md",
-    "Troubleshooting - Kubernetes.md",
-    "Troubleshooting.md"
+    "Vault/Resourse Quotas.md",
+    "Vault/Name spaces.md"
   ]
 }
