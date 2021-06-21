@@ -1,0 +1,102 @@
+{
+  "main": {
+    "id": "172e38b4becde26e",
+    "type": "split",
+    "children": [
+      {
+        "id": "d8d7ae94f5450a8c",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Vault/Troubleshooting - Kubernetes.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "18b4b1498dd1b69d",
+    "type": "split",
+    "children": [
+      {
+        "id": "e9740224a95adc24",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b93c34a56cce4136",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "53c50867102117a0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#troubleshooting",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "6adcd5b11bf5f53a",
+    "type": "split",
+    "children": [
+      {
+        "id": "b61bea1934bf694d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7da728df84a5bd09",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Vault/Troubleshooting - Kubernetes.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "d8d7ae94f5450a8c",
+  "lastOpenFiles": [
+    "Vault/Troubleshooting - Kubernetes.md",
+    "Vault/Resourse Quotas.md",
+    "ToDo.md",
+    "Vault/Name spaces.md",
+    "Vault/Troubleshooting.md",
+    "Vault/Terraform.md",
+    "Terraform.md",
+    "Markdown.md",
+    "Troubleshooting - Kubernetes.md",
+    "Troubleshooting.md"
+  ]
+}
