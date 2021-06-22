@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Vault/Performance/Performance.md",
+            "file": "Vault/Policies/ACL Templating.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Vault/Performance/Performance.md",
+                "file": "Vault/Policies/ACL Templating.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "d8d7ae94f5450a8c",
   "lastOpenFiles": [
+    "Vault/Policies/Untitled.md",
+    "Untitled.md",
     "Vault/Performance/Performance.md",
+    "Vault/Troubleshooting/Kubernetes.md",
+    "Vault/Storage/Raft.md",
+    "tokens.md",
     "Onboardin.md",
     "ToDo.md",
     "Markdown.md",
-    "Telemetry.md",
-    "Vault/Performance.md",
-    "policy.md",
-    "Vault/Untitled.md",
-    "Certification.md",
-    "Untitled.md"
+    "Telemetry.md"
   ]
 }

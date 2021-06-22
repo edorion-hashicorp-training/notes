@@ -28,11 +28,11 @@ Can see things specifically like connections to a DB secrets engine
 "too many open files"
 
 *Increase the limit*
-Edit the Vault systemd service unit file, specifying a value for **LimitNOFILE** [process property](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#Process%20Properties)
+- [ ] Edit the Vault systemd service unit file, specifying a value for **LimitNOFILE** [process property](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#Process%20Properties)
 `sudo vi /etc/systemd/system/vault.service`
-add LimitNOFILE=65536 under the '\[Service\]' propperty then restart the vault demon `systemctl "demon" reload`
-if no error, restart the vault service `systemctl restart vault` 
-verify change success `cat /proc/$(pidof vault)/limits | awk 'NR==1; /Max open files/'`
+- [ ] add LimitNOFILE=65536 under the '\[Service\]' propperty then restart the vault demon `systemctl "demon" reload`
+- [ ] if no error, restart the vault service `systemctl restart vault` 
+- [ ] verify change success `cat /proc/$(pidof vault)/limits | awk 'NR==1; /Max open files/'`
 **note:** demon restarts can seal the vault and require unsealing... pain in the @#$%@#%@ if there is no auto unseal
 
 #### #cpu scaling
@@ -107,3 +107,98 @@ replication {
 ###### Policy Evaluation
 ![Policy Evaluation|800](https://learn.hashicorp.com/img/vault-policy-evaluation.png)
 
+
+### [[Sentinel]] policies
+
+- understandably the more complex the more expensive it will be 
+- template paths add more cost
+- Sentinel requests are more expensive than a normal globed policy
+- [HTTP import](https://docs.hashicorp.com/sentinel/imports/http/) is a compounding factor in #sentinal policy performance
+
+### #tokens 
+
+Interaction | Vault operations
+------------ | ------------
+Login request | Write new token to the Token Store<br> Write new lease to the Lease Store
+Revoke token (or token expiration) | Delete token<br> Delete token lease<br> Delete all child tokens and leases
+
+[Batch tokens](https://www.vaultproject.io/docs/concepts/tokens#batch-tokens) don't require disk storage so less I/O impact but much less functionality / persistence
+- cant be revoked or renewed
+- TTL must be set in advance (often longer lived than service tokens)
+
+### Seal Wrap
+- #HSM - communication to service adds latency cost
+- even if data is cached it will be encrypted so will need to be unencrypted so the cost still exists
+
+### #Storage backend
+[storage backends](https://www.vaultproject.io/docs/configuration/storage)
+- primary source of latency
+- writes cost more than reads 
+- The majority of Vault write operations relate to these events:
+	-   Logins and token creation
+	-   Dynamic secret creation
+	-   Renewals
+	-   Revocations
+
+###### #consul
+- in memory so i/o operations quick
+- subject to network latency
+- complex 
+	- subject to oom 
+	- hard to debug
+	- snapshotting can impact performance (lock?)
+- resource expensive (requires memory of 3x the key/value store containing Vault data)
+- imperative to maintain good IOPS ref [Consul reference architecture](https://learn.hashicorp.com/consul/datacenter-deploy/reference-architecture) [Consul deployment guide](https://learn.hashicorp.com/consul/datacenter-deploy/deployment-guide)
+
+**Common errors**
+Consul server memory usage and errors
+`grep 'Out of memory' /var/log/messages`
+
+Check for "canceled context" which may represent reduced IOPS 
+`grep 'ERROR' /var/log/messages`
+
+**Consul storage for vault #tuning**
+[kv\_max\_value\_size](https://www.consul.io/docs/agent/options#kv_max_value_size) 
+- default 512kb 
+- maximum size of data Vault can write to a Consul key
+- can revieve "request body too large" errors
+
+txn_max_req_ln
+- max length of a transaction body
+
+max_parallel
+- default 128
+- max parallel / synchronous requests
+- more commonly lowered to reduce load on a cluster than increased to go faster
+
+consistency_mode
+[Consistency Modes](https://www.consul.io/api-docs/features/consistency)
+- again redis like, has trade off's default should be fine unless stale data is of critical importance
+
+###### #Raft 
+- simple operation (on disk)
+- no network latency but does fsync()
+- slower than consul as, disk I/O
+
+**Raft storage tuning**
+mlock()
+- recommended to be disabled if using raft 
+	- issues with BOltDB memory mapped files
+	- will load the complete Vault dataset into memory
+
+Swap
+- recommended disabled to stop secrets being dumped to disk
+
+#performance_multiplier
+- default 0 (behaves like a 5 which isnt the highest performance )
+- recommended 1 for production to ensure rapid convergence
+
+#snapshot_threshold
+[snapshot\_threshold](https://www.vaultproject.io/docs/configuration/storage/raft#snapshot_threshold)
+- like redis writes
+
+### Resource limits & maximums
+**Secrets engines**
+- no hard limit on number of enabled
+- still restricted or max consul value size 51k2b 
+	- Raft doesn't impose such a limit but large keys do introduce issues with replication and cluster governance
