@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "ToDo.md",
+            "file": "Onboarding.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ToDo.md",
+                "file": "Onboarding.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,6 +88,7 @@
   },
   "active": "d8d7ae94f5450a8c",
   "lastOpenFiles": [
+    "Onboardin.md",
     "ToDo.md",
     "Markdown.md",
     "Telemetry.md",
@@ -96,7 +97,6 @@
     "Vault/Untitled.md",
     "Certification.md",
     "Untitled.md",
-    "Vault/Troubleshooting/Kubernetes.md",
-    "Vault/Troubleshooting/General.md"
+    "Vault/Troubleshooting/Kubernetes.md"
   ]
 }
