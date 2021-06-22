@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Onboarding.md",
+            "file": "Vault/Performance/Performance.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Onboarding.md",
+                "file": "Vault/Performance/Performance.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,6 +88,7 @@
   },
   "active": "d8d7ae94f5450a8c",
   "lastOpenFiles": [
+    "Vault/Performance/Performance.md",
     "Onboardin.md",
     "ToDo.md",
     "Markdown.md",
@@ -96,7 +97,6 @@
     "policy.md",
     "Vault/Untitled.md",
     "Certification.md",
-    "Untitled.md",
-    "Vault/Troubleshooting/Kubernetes.md"
+    "Untitled.md"
   ]
 }

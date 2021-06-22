@@ -99,3 +99,11 @@ replication {
 - limit certificate overlap i.e. reuse until renewed rather than have multiple long lived certs
 - Certificate Revocation List (CRL) - only 512KB in consul storage so multiple live certs can fill it quick
 
+### #ALC in #policies
+
+- The more complex the more potential processing overhead required to process a request
+- policy templates and + and * operators contribute to complexity
+
+###### Policy Evaluation
+![Policy Evaluation|800](https://learn.hashicorp.com/img/vault-policy-evaluation.png)
+
