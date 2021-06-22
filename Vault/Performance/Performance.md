@@ -99,6 +99,3 @@ replication {
 - limit certificate overlap i.e. reuse until renewed rather than have multiple long lived certs
 - Certificate Revocation List (CRL) - only 512KB in consul storage so multiple live certs can fill it quick
 
-
-
-
