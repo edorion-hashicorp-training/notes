@@ -1,5 +1,6 @@
 -  [ ] Teraform / vault / Travis CI / github 
 -  [ ] [[Name spaces]] (expand)
--  [ ] 0https://learn.hashicorp.com/tutorials/vault/inspecting-data-consul?in=vault/monitoring
+-  [ ] https://learn.hashicorp.com/tutorials/vault/inspecting-data-consul?in=vault/monitoring
 -  [ ] #certification #exam 
 -  [ ] sills map submission
+-  [ ] review  [Go template language](https://golang.org/pkg/text/template/)

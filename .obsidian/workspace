@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "d8d7ae94f5450a8c",
+        "id": "ae7babbb53075fff",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Vault/Policies/ACL Templating.md",
+            "file": "WORKING.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Vault/Policies/ACL Templating.md",
+                "file": "WORKING.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -86,17 +86,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "d8d7ae94f5450a8c",
+  "active": "ae7babbb53075fff",
   "lastOpenFiles": [
-    "Vault/Policies/Untitled.md",
-    "Untitled.md",
-    "Vault/Performance/Performance.md",
-    "Vault/Troubleshooting/Kubernetes.md",
-    "Vault/Storage/Raft.md",
-    "tokens.md",
-    "Onboardin.md",
+    "WORKING.md",
     "ToDo.md",
-    "Markdown.md",
-    "Telemetry.md"
+    "Untitled.md",
+    "Vault/Username Templating.md",
+    "Vault/Policies/Policies.md",
+    "Vault/Policies/ACL Templating.md",
+    "Vault/Policies/Untitled.md",
+    "Vault/Response-Wrapping Tokens.md",
+    "Vault/Token.md",
+    "Vault/Usage Metrics.md"
   ]
 }
