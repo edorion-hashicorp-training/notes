@@ -1,6 +1,7 @@
 # #Raft
 #Integrated #Storage backend
 
+https://www.vaultproject.io/docs/concepts/integrated-storage
 https://www.vaultproject.io/docs/configuration/storage/raft
 
 Data gets replicated as per [Raft Consensus Algorithm](https://raft.github.io/ "The Raft Consensus Algorithm")
@@ -15,3 +16,8 @@ Data gets replicated as per [Raft Consensus Algorithm](https://raft.github.io/ "
 *disable_mlock to true* to stop clash of disk use and swapping
 
 Each `retry_join` stanza may contain either a `leader_api_addr` value or a cloud `auto_join` configuration value, but not both.
+
+
+### joining issue with TLS
+Vault node must speak to another Vault node using the API port instead of the cluster port to first get the cert and connection details / name for the cert to work with
+

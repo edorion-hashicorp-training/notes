@@ -12,7 +12,15 @@ https://learn.hashicorp.com/tutorials/vault/policies?in=vault/policies
 
 ### Globs
 * is a wild card to match everything after so always last char in a a path match
-+ is a ild card to math any word in a path i.e. "secret/+/teamb" matches anything under secret that has a teamb sub folder so cant be the last char in a path match and must be between '/'s
++ is a ild card to match any word in a path i.e. "secret/+/teamb" matches anything under secret that has a teamb sub folder so cant be the last char in a path match and must be between '/'s
+
+
+policy example
+"*" - `vault namespace list` OK
+"/*" - `vault namespace list` OK
+"+/*" - `vault namespace list` OK
+"/+/*" - `vault namespace list` OK
+"sys/+/*" - `vault namespace list` OK
 
 ### /sys/
 - core config folder

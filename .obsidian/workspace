@@ -89,14 +89,14 @@
   "active": "ae7babbb53075fff",
   "lastOpenFiles": [
     "WORKING.md",
-    "ToDo.md",
-    "Untitled.md",
-    "Vault/Username Templating.md",
+    "Vault/Info Commands.md",
     "Vault/Policies/Policies.md",
-    "Vault/Policies/ACL Templating.md",
-    "Vault/Policies/Untitled.md",
-    "Vault/Response-Wrapping Tokens.md",
-    "Vault/Token.md",
-    "Vault/Usage Metrics.md"
+    "ToDo.md",
+    "Vault/Untitled.md",
+    "Vault/Tokens/Response-Wrapping Tokens.md",
+    "Vault/Seal.md",
+    "Vault/Storage/Raft.md",
+    "Vault/Storage/Untitled.md",
+    "Vault/HA/HA.md"
   ]
 }
